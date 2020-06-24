@@ -139,7 +139,9 @@ export function mapTemplatesToStaticQueryHashes(
 
   globalStaticQueries.forEach(q => {
     const hash = mapOfComponentsToStaticQueryHashes.get(q)
-    if (hash) globalStaticQueryHashes.push(hash)
+    if (hash) {
+      globalStaticQueryHashes.push(hash)
+    }
   })
 
   // For every known page, we get queries
@@ -150,7 +152,9 @@ export function mapTemplatesToStaticQueryHashes(
       // Does this page contain an inline static query?
       if (mapOfComponentsToStaticQueryHashes.has(page)) {
         const hash = mapOfComponentsToStaticQueryHashes.get(page)
-        if (hash) staticQueryHashes.push(hash)
+        if (hash) {
+          staticQueryHashes.push(hash)
+        }
       }
 
       // Check dependencies
@@ -160,7 +164,9 @@ export function mapTemplatesToStaticQueryHashes(
             const hash = mapOfComponentsToStaticQueryHashes.get(
               staticQueryComponentPath
             )
-            if (hash) staticQueryHashes.push(hash)
+            if (hash) {
+              staticQueryHashes.push(hash)
+            }
           }
         }
       )
